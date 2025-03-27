@@ -1,0 +1,23 @@
+{
+  "name": "chrome-docker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "build:docker": "docker build -t custom-puppeteer .",
+    "run:docker": "docker run --init --cap-add=SYS_ADMIN -it -p 3000:3000 custom-puppeteer",
+    "dev:docker": "docker run --init --cap-add=SYS_ADMIN -it -p 3000:3000 -v $(pwd):/app custom-puppeteer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "puppeteer": "^24.4.0",
+    "uuid": "^11.1.0"
+  }
+}
